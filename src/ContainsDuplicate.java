@@ -1,22 +1,55 @@
+//public class ContainsDuplicate {
+//
+//    private static boolean containsDuplicate(int[] nums) {
+//        for(int i=0; i< nums.length;i++){
+//            for (int j=i+1; j< nums.length; j++){
+//                if(nums[i] == nums[j]){
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;
+//    }
+//
+//    public static void main (String [] args){
+//        int [] nums = {1,2,3,1};
+//
+//        boolean result = containsDuplicate(nums);
+//
+//        System.out.println(result);
+//    }
+//
+//}
+
+
+//using hashset approach
+import java.util.HashSet;
+
 public class ContainsDuplicate {
 
-    private static boolean containsDuplicate(int[] nums) {
-        for(int i=0; i< nums.length;i++){
-            for (int j=i+1; j< nums.length; j++){
-                if(nums[i] == nums[j]){
-                    return true;
-                }
+    public static boolean containsDuplicate(int[] nums) {
+
+        HashSet<Integer> set = new HashSet<>();
+
+        for (int num : nums) {
+
+            if (set.contains(num)) {
+
+                return true;
             }
+
+            set.add(num);
         }
+
         return false;
     }
 
-    public static void main (String [] args){
-        int [] nums = {1,2,3,1};
+    public static void main(String[] args) {
+
+        int[] nums = {1,2,3,1};
 
         boolean result = containsDuplicate(nums);
 
         System.out.println(result);
     }
-
 }
