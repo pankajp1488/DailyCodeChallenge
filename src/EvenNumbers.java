@@ -14,6 +14,10 @@ public class EvenNumbers {
           number.stream()
                   //each number is checked for even
                 .filter(n -> n % 2 == 0)
+                  //multiply even numbers by 2
+                  .map(n -> n * 2)
+                  //sorts in ascending order
+                  .sorted()
                 .forEach(System.out::println);
     }
 }
